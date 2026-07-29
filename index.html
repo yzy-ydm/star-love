@@ -7,14 +7,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>给你的惊喜</title>
+<title>Aurora Love</title>
 
 
 <style>
 
-/* =========================
-   基础
-========================= */
 
 *{
     margin:0;
@@ -30,7 +27,7 @@ html,body{
 
     overflow:hidden;
 
-    background:#05020d;
+    background:#02030a;
 
     font-family:
     "Microsoft YaHei",
@@ -39,32 +36,47 @@ html,body{
 }
 
 
-/* =========================
-   深空背景
-========================= */
 
-.space-bg{
+/* =====================
+       宇宙底色
+===================== */
+
+
+.space{
+
 
     position:fixed;
 
     inset:0;
 
+
+
     background:
 
+
     radial-gradient(
-        ellipse at center,
-        #241044 0%,
-        #100722 40%,
-        #05020d 75%,
-        #020106 100%
+        ellipse at 50% 45%,
+        #39205e 0%,
+        #17102e 35%,
+        #070817 70%,
+        #02030a 100%
     );
 
+
+
     z-index:0;
+
 
 }
 
 
-/* 银河云层 */
+
+
+
+/* =====================
+       动态星云
+===================== */
+
 
 .nebula{
 
@@ -72,12 +84,15 @@ html,body{
     position:fixed;
 
 
-    width:150%;
-    height:150%;
+    width:160vw;
+
+    height:160vh;
 
 
-    left:-25%;
-    top:-25%;
+
+    left:-30vw;
+
+    top:-30vh;
 
 
 
@@ -85,39 +100,41 @@ html,body{
 
 
     radial-gradient(
-        ellipse at 35% 45%,
-        rgba(90,120,255,.18),
-        transparent 45%
+        ellipse at 25% 35%,
+        rgba(90,150,255,.22),
+        transparent 42%
     ),
 
 
     radial-gradient(
-        ellipse at 70% 60%,
-        rgba(255,120,190,.12),
+        ellipse at 75% 60%,
+        rgba(255,110,200,.18),
         transparent 40%
     ),
 
 
     radial-gradient(
-        ellipse at 50% 20%,
-        rgba(120,180,255,.10),
-        transparent 35%
+        ellipse at 50% 80%,
+        rgba(140,80,255,.15),
+        transparent 45%
     );
 
 
 
-    filter:blur(50px);
+    filter:blur(55px);
+
 
 
     animation:
 
-    nebulaMove 30s infinite alternate;
+    nebulaMove 45s infinite alternate;
 
 
 
     z-index:1;
 
 }
+
 
 
 
@@ -136,8 +153,100 @@ html,body{
     to{
 
         transform:
-        rotate(15deg)
+        rotate(20deg)
         scale(1.15);
+
+    }
+
+}
+
+
+
+
+
+/* =====================
+       银河光带
+===================== */
+
+
+.galaxy{
+
+
+    position:fixed;
+
+
+
+    width:150vw;
+
+    height:40vh;
+
+
+
+    left:-25vw;
+
+    top:35vh;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(120,160,255,.18),
+
+        rgba(255,180,230,.22),
+
+        rgba(120,160,255,.18),
+
+        transparent
+
+    );
+
+
+
+    filter:blur(45px);
+
+
+
+    transform:
+
+    rotate(-25deg);
+
+
+
+    animation:
+
+    galaxyGlow 10s infinite alternate;
+
+
+
+    z-index:1;
+
+
+}
+
+
+
+
+
+@keyframes galaxyGlow{
+
+
+    from{
+
+        opacity:.4;
+
+    }
+
+
+    to{
+
+        opacity:1;
 
     }
 
@@ -148,32 +257,142 @@ html,body{
 
 
 
-/* =========================
-   星空Canvas
-========================= */
 
-#starCanvas{
+/* =====================
+       星空Canvas
+===================== */
+
+
+#canvas{
+
 
     position:fixed;
 
+
     inset:0;
+
 
     width:100%;
 
+
     height:100%;
 
+
     z-index:2;
+
 
 }
 
 
 
-/* =========================
-   爱心光晕
-========================= */
 
 
-.heart-glow{
+
+
+
+/* =====================
+       开始界面
+===================== */
+
+
+.start{
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+    z-index:50;
+
+
+
+    background:
+    rgba(0,0,0,.15);
+
+
+}
+
+
+
+
+.start span{
+
+
+    color:white;
+
+
+    font-size:24px;
+
+
+
+    letter-spacing:8px;
+
+
+
+    text-shadow:
+
+
+    0 0 15px white,
+
+
+    0 0 40px #9db8ff;
+
+
+
+    animation:
+
+    startPulse 3s infinite;
+
+
+}
+
+
+
+
+@keyframes startPulse{
+
+
+    50%{
+
+        opacity:1;
+
+    }
+
+
+    0%,100%{
+
+        opacity:.55;
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* =====================
+       爱心光晕
+===================== */
+
+
+.heartGlow{
 
 
     position:fixed;
@@ -181,12 +400,16 @@ html,body{
 
     left:50%;
 
+
     top:50%;
 
 
-    width:500px;
 
-    height:500px;
+    width:480px;
+
+
+    height:480px;
+
 
 
     transform:
@@ -196,15 +419,20 @@ html,body{
 
     background:
 
+
     radial-gradient(
+
         circle,
-        rgba(255,90,170,.22),
+
+        rgba(255,120,190,.35),
+
         transparent 70%
+
     );
 
 
 
-    filter:blur(50px);
+    filter:blur(45px);
 
 
 
@@ -217,42 +445,42 @@ html,body{
 
 
     transition:
-    opacity 2s;
+    opacity 1.5s;
 
 
 }
 
 
 
-.heart-glow.active{
+
+.heartGlow.active{
+
 
     opacity:1;
 
+
     animation:
 
-    heartbeat 3s infinite;
+    heartPulse 2.5s infinite;
+
 
 }
 
 
 
-@keyframes heartbeat{
 
-
-    0%,100%{
-
-        transform:
-        translate(-50%,-50%)
-        scale(1);
-
-    }
+@keyframes heartPulse{
 
 
     50%{
 
+
         transform:
+
         translate(-50%,-50%)
-        scale(1.15);
+
+        scale(1.12);
+
 
     }
 
@@ -263,99 +491,19 @@ html,body{
 
 
 
-/* =========================
-   开始按钮
-========================= */
-
-
-.start-screen{
-
-
-    position:fixed;
-
-
-    inset:0;
-
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
 
 
 
-    z-index:50;
-
-
-
-    background:
-    rgba(0,0,0,.25);
-
-
-
-}
-
-
-
-.start-text{
-
-
-    color:white;
-
-
-    font-size:22px;
-
-
-    letter-spacing:6px;
-
-
-    text-shadow:
-
-    0 0 10px white,
-    0 0 30px #8da8ff;
-
-
-
-    animation:
-
-    breathe 3s infinite;
-
-
-
-}
-
-
-
-@keyframes breathe{
-
-
-    0%,100%{
-
-        opacity:.6;
-
-    }
-
-
-    50%{
-
-        opacity:1;
-
-    }
-
-}
-
-
-
-/* =========================
-   小窗口
-========================= */
+/* =====================
+       弹窗
+===================== */
 
 
 .popup{
 
 
     position:absolute;
+
 
 
     width:140px;
@@ -365,7 +513,7 @@ html,body{
 
 
 
-    border-radius:8px;
+    border-radius:10px;
 
 
 
@@ -377,21 +525,14 @@ html,body{
 
 
 
+
     box-shadow:
 
 
-    0 0 18px rgba(255,255,255,.25),
+    0 0 15px rgba(255,255,255,.25),
 
 
-    0 8px 25px rgba(0,0,0,.55);
-
-
-
-    animation:
-
-    popupIn .35s
-    cubic-bezier(.2,1.5,.4,1)
-    forwards;
+    0 8px 25px rgba(0,0,0,.35);
 
 
 
@@ -399,7 +540,13 @@ html,body{
 
 
 
+    animation:
+
+    popupIn .35s forwards;
+
+
 }
+
 
 
 
@@ -417,10 +564,13 @@ html,body{
 
 
 
-.title-bar{
+
+
+.popupHead{
 
 
     height:18px;
+
 
 
     background:
@@ -442,12 +592,12 @@ html,body{
     padding-right:8px;
 
 
-
 }
 
 
 
-.close-btn{
+
+.close{
 
 
     width:8px;
@@ -456,16 +606,12 @@ html,body{
     height:8px;
 
 
-    background:#ff5f57;
-
 
     border-radius:50%;
 
 
 
-    box-shadow:
-
-    0 0 8px #ff5f57;
+    background:#ff5f57;
 
 
 
@@ -473,22 +619,28 @@ html,body{
 
 
 
-.popup-content{
 
 
-    height:
 
-    calc(100% - 18px);
+
+.popupText{
+
+
+    height:52px;
 
 
 
     display:flex;
 
 
+    align-items:center;
+
+
     justify-content:center;
 
 
-    align-items:center;
+
+    padding:5px;
 
 
 
@@ -506,21 +658,22 @@ html,body{
     color:#333;
 
 
-
-    padding:5px;
-
-
-
 }
 
 
 
-/* =========================
-   最终文字
-========================= */
 
 
-.final-text{
+
+
+
+
+/* =====================
+       最终文字
+===================== */
+
+
+.final{
 
 
     position:fixed;
@@ -546,7 +699,8 @@ html,body{
 
 
 
-    font-size:38px;
+    font-size:40px;
+
 
 
     line-height:2;
@@ -565,82 +719,87 @@ html,body{
 
 
 
-    text-shadow:
-
-
-    0 0 10px white,
-
-    0 0 30px #ff8fc8,
-
-    0 0 60px #8da8ff;
-
-
-
     transition:
 
     opacity 3s;
 
 
 
+    text-shadow:
+
+
+    0 0 15px white,
+
+
+    0 0 50px #ff9bd0;
+
+
 }
 
 
 
-.final-text.show{
+
+.final.show{
+
 
     opacity:1;
 
+
 }
 
 
 
-
-
-/* =========================
-   手机适配
-========================= */
 
 
 @media(max-width:600px){
 
 
-.popup{
+    .popup{
 
-    width:115px;
 
-    height:58px;
+        width:110px;
+
+        height:58px;
+
+
+    }
+
+
+    .popupText{
+
+
+        height:40px;
+
+
+        font-size:11px;
+
+
+    }
+
+
+    .final{
+
+
+        font-size:24px;
+
+
+        letter-spacing:4px;
+
+
+    }
+
+
+    .start span{
+
+
+        font-size:18px;
+
+
+    }
+
 
 }
 
-
-
-.popup-content{
-
-    font-size:11px;
-
-}
-
-
-
-.final-text{
-
-    font-size:25px;
-
-    letter-spacing:4px;
-
-}
-
-
-
-.start-text{
-
-    font-size:17px;
-
-}
-
-
-
-}
 
 
 </style>
@@ -653,36 +812,55 @@ html,body{
 <body>
 
 
-<div class="space-bg"></div>
+<div class="space"></div>
 
 
 <div class="nebula"></div>
 
 
-<canvas id="starCanvas"></canvas>
+<div class="galaxy"></div>
 
 
-<div class="heart-glow"></div>
+<canvas id="canvas"></canvas>
 
 
 
-<div class="start-screen">
+<div class="heartGlow"></div>
 
-<div class="start-text">
+
+
+
+<div class="start">
+
+<span>
 
 ✨ 点击开启星河 ✨
 
-</div>
+</span>
 
 </div>
 
 
 
-<div class="final-text">
+<div class="final">
 
-遇见你<br>
+
+遇见你
+
+<br>
 
 是银河赠我的礼物
+
+
+<br>
+
+
+<span style="font-size:.45em">
+
+愿你永远被温柔以待
+
+</span>
+
 
 </div>
 
@@ -691,58 +869,49 @@ html,body{
 <script>
 
 
-const canvas = document.getElementById("starCanvas");
-const ctx = canvas.getContext("2d");
+const canvas =
+document.getElementById("canvas");
+
+const ctx =
+canvas.getContext("2d");
 
 
-let width;
-let height;
+let w,h;
 
 
-let stars = [];
-let meteors = [];
+function resize(){
 
-let popupList = [];
+    w=canvas.width=window.innerWidth;
 
-
-let isMobile =
-window.innerWidth < 600;
-
-
-
-function resizeCanvas(){
-
-    width =
-    canvas.width =
-    window.innerWidth;
-
-
-    height =
-    canvas.height =
-    window.innerHeight;
+    h=canvas.height=window.innerHeight;
 
 }
 
-
-resizeCanvas();
+resize();
 
 
 window.addEventListener(
 "resize",
-resizeCanvas
+resize
 );
 
 
 
+const mobile =
+window.innerWidth < 600;
 
 
-/* =========================
-        星空系统
-========================= */
+
+/* =====================
+        星空
+===================== */
 
 
-const starCount =
-isMobile ? 180 : 450;
+let stars=[];
+
+
+let starCount =
+mobile ? 220 : 500;
 
 
 
@@ -751,84 +920,59 @@ for(let i=0;i<starCount;i++){
 
     stars.push({
 
-        x:
-        Math.random()*width,
+        x:Math.random()*w,
+
+        y:Math.random()*h,
+
+        r:Math.random()*1.8+.3,
+
+        alpha:Math.random(),
+
+        speed:
+        Math.random()*.015+.005,
+
+        phase:
+        Math.random()*6.28
+
+    });
 
 
-        y:
-        Math.random()*height,
+}
 
 
-        r:
-        Math.random()*1.5+0.3,
 
 
-        alpha:
-        Math.random(),
+
+
+/* =====================
+        银河粒子
+===================== */
+
+
+let galaxyParticles=[];
+
+
+
+for(let i=0;i<220;i++){
+
+
+    galaxyParticles.push({
+
+
+        angle:
+        Math.random()*Math.PI*2,
+
+
+        radius:
+        Math.random()*500+120,
 
 
         speed:
-        Math.random()*0.02+0.005,
+        Math.random()*.0015+.0005,
 
 
-        offset:
-        Math.random()*Math.PI*2
-
-
-    });
-
-
-}
-
-
-
-
-
-function drawStars(){
-
-
-    stars.forEach(star=>{
-
-
-        star.offset += star.speed;
-
-
-
-        let alpha =
-        0.35 +
-        Math.sin(star.offset)
-        *
-        0.35;
-
-
-
-        ctx.beginPath();
-
-
-
-        ctx.arc(
-
-            star.x,
-
-            star.y,
-
-            star.r,
-
-            0,
-
-            Math.PI*2
-
-        );
-
-
-
-        ctx.fillStyle =
-        `rgba(255,255,255,${alpha})`;
-
-
-
-        ctx.fill();
-
+        size:
+        Math.random()*1.5+.5
 
 
     });
@@ -841,142 +985,38 @@ function drawStars(){
 
 
 
-/* =========================
-       银河系统
-========================= */
 
-
-let galaxyAngle = 0;
-
-
-
-function drawGalaxy(){
-
-
-    galaxyAngle+=0.0005;
-
-
-    ctx.save();
-
-
-    ctx.translate(
-        width/2,
-        height/2
-    );
-
-
-    ctx.rotate(
-        galaxyAngle
-    );
-
-
-
-    for(
-    let i=0;
-    i<300;
-    i++
-    ){
-
-
-        let distance =
-        Math.random()
-        *
-        Math.max(width,height);
-
-
-
-        let angle =
-        Math.random()
-        *
-        Math.PI*2;
-
-
-
-        let x =
-        Math.cos(angle)
-        *
-        distance;
-
-
-
-        let y =
-        Math.sin(angle)
-        *
-        distance
-        *
-        0.25;
-
-
-
-        ctx.beginPath();
-
-
-
-        ctx.arc(
-
-            x,
-
-            y,
-
-            Math.random()*1.5,
-
-            0,
-
-            Math.PI*2
-
-        );
-
-
-
-        ctx.fillStyle =
-        "rgba(170,190,255,.15)";
-
-
-
-        ctx.fill();
-
-
-    }
-
-
-
-    ctx.restore();
-
-
-}
-
-
-
-
-
-
-/* =========================
+/* =====================
         流星
-========================= */
+===================== */
 
 
-function createMeteor(){
+let meteors=[];
+
+
+
+function addMeteor(){
 
 
     meteors.push({
 
 
         x:
-        Math.random()*width,
+        Math.random()*w+200,
 
 
         y:
-        -50,
+        -100,
 
 
         length:
-        60+
-        Math.random()*80,
+        100+
+        Math.random()*100,
 
 
         speed:
-        5+
-        Math.random()*6,
+        7+
+        Math.random()*8,
 
 
         alpha:1
@@ -992,127 +1032,148 @@ function createMeteor(){
 setInterval(()=>{
 
 
-    if(Math.random()<0.8){
+    if(Math.random()<0.7)
 
-        createMeteor();
+    addMeteor();
 
-    }
 
+},3000);
 
-},2500);
 
 
 
 
 
 
+/* =====================
+        绘制星空
+===================== */
 
-function drawMeteors(){
 
+function drawStars(){
 
-    for(
-    let i=meteors.length-1;
-    i>=0;
-    i--
-    ){
 
 
-        let m =
-        meteors[i];
+stars.forEach(s=>{
 
 
+    s.phase+=s.speed;
 
-        let gradient =
-        ctx.createLinearGradient(
 
-            m.x,
 
-            m.y,
+    let a=
+    .35+
+    Math.sin(s.phase)*.35;
 
-            m.x-m.length,
 
-            m.y+m.length
 
-        );
+    ctx.beginPath();
 
 
+    ctx.arc(
 
-        gradient.addColorStop(
+        s.x,
 
-            0,
+        s.y,
 
-            `rgba(255,255,255,${m.alpha})`
+        s.r,
 
-        );
+        0,
 
+        Math.PI*2
 
+    );
 
-        gradient.addColorStop(
 
-            1,
+    ctx.fillStyle=
 
-            "rgba(255,255,255,0)"
+    `rgba(255,255,255,${a})`;
 
-        );
 
+    ctx.fill();
 
 
 
-        ctx.beginPath();
+});
 
 
+}
 
-        ctx.moveTo(
-            m.x,
-            m.y
-        );
 
 
 
-        ctx.lineTo(
 
-            m.x-m.length,
+function drawGalaxy(){
 
-            m.y+m.length
 
-        );
+ctx.save();
 
 
 
-        ctx.strokeStyle =
-        gradient;
+ctx.translate(
+w/2,
+h/2
+);
 
 
 
-        ctx.lineWidth=2;
+galaxyParticles.forEach(p=>{
 
 
+    p.angle+=p.speed;
 
-        ctx.stroke();
 
 
+    let x=
+    Math.cos(p.angle)
+    *
+    p.radius;
 
 
-        m.x-=m.speed;
 
+    let y=
+    Math.sin(p.angle)
+    *
+    p.radius
+    *
+    .3;
 
-        m.y+=m.speed;
 
 
+    ctx.beginPath();
 
-        m.alpha-=0.015;
 
 
+    ctx.arc(
 
+        x,
 
-        if(m.alpha<=0){
+        y,
 
-            meteors.splice(i,1);
+        p.size,
 
-        }
+        0,
 
+        Math.PI*2
 
-    }
+    );
+
+
+
+    ctx.fillStyle=
+
+    "rgba(210,220,255,.45)";
+
+
+    ctx.fill();
+
+
+});
+
+
+
+ctx.restore();
+
 
 
 }
@@ -1123,12 +1184,119 @@ function drawMeteors(){
 
 
 
-/* =========================
-       窗口文字
-========================= */
+function drawMeteor(){
 
 
-const messages=[
+
+for(let i=meteors.length-1;i>=0;i--){
+
+
+
+let m=meteors[i];
+
+
+
+let gradient=
+ctx.createLinearGradient(
+
+m.x,
+
+m.y,
+
+m.x-m.length,
+
+m.y+m.length
+
+);
+
+
+
+gradient.addColorStop(
+
+0,
+
+`rgba(255,255,255,${m.alpha})`
+
+);
+
+
+
+gradient.addColorStop(
+
+1,
+
+"transparent"
+
+);
+
+
+
+
+ctx.beginPath();
+
+
+
+ctx.moveTo(
+m.x,
+m.y
+);
+
+
+
+ctx.lineTo(
+
+m.x-m.length,
+
+m.y+m.length
+
+);
+
+
+
+ctx.strokeStyle=gradient;
+
+
+ctx.lineWidth=2;
+
+
+ctx.stroke();
+
+
+
+m.x-=m.speed;
+
+
+m.y+=m.speed;
+
+
+m.alpha-=.012;
+
+
+
+if(m.alpha<=0)
+
+meteors.splice(i,1);
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+       弹窗系统
+===================== */
+
+
+const texts=[
 
 
 "好好吃饭",
@@ -1139,21 +1307,19 @@ const messages=[
 
 "不要熬夜",
 
-"保持开心",
-
 "照顾好自己",
+
+"每天开心",
 
 "我想你了",
 
-"每天快乐",
+"永远幸福",
 
 "顺顺利利",
 
-"永远爱你",
+"遇见你真好",
 
-"希望你幸福",
-
-"遇见你真好"
+"希望你快乐"
 
 
 ];
@@ -1162,22 +1328,23 @@ const messages=[
 
 const colors=[
 
+
 "#ffd6e7",
 
-"#d7f5ff",
+"#d7ecff",
 
-"#fff2b8",
+"#fff2bd",
 
-"#d9ffd9",
+"#d8ffd8",
 
-"#e8dcff",
-
-"#ffd8c4"
+"#e9dcff"
 
 
 ];
 
 
+
+let popups=[];
 
 
 
@@ -1185,235 +1352,71 @@ const colors=[
 function createPopup(x,y){
 
 
-    let div =
-    document.createElement("div");
+
+let div=document.createElement("div");
 
 
 
-    div.className="popup";
+div.className="popup";
 
 
 
-    let color =
-    colors[
-    Math.floor(
-    Math.random()*colors.length
-    )
-    ];
+div.style.left=x+"px";
+
+
+div.style.top=y+"px";
 
 
 
-    let text =
-    messages[
-    Math.floor(
-    Math.random()*messages.length
-    )
-    ];
+div.style.background=
 
-
-
-    div.style.left =
-    x+"px";
-
-
-    div.style.top =
-    y+"px";
-
-
-
-    div.style.background =
-    color;
-
-
-
-    div.innerHTML = `
-
-
-    <div class="title-bar">
-
-        <div class="close-btn"></div>
-
-    </div>
-
-
-    <div class="popup-content">
-
-        ${text}
-
-    </div>
-
-
-    `;
-
-
-
-    document.body.appendChild(div);
-
-
-
-    popupList.push(div);
-
-
-
-    return div;
-
-
-}
-
-
-
-
-
-
-
-/* =========================
-       爱心坐标
-========================= */
-
-
-function heartPosition(
-t,
-scale
-){
-
-
-return {
-
-
-x:
-16*
-Math.pow(
-Math.sin(t),
-3
+colors[
+Math.floor(
+Math.random()*colors.length
 )
-*
-scale,
+];
 
 
-y:
-(
-13*Math.cos(t)
--
-5*Math.cos(2*t)
--
-2*Math.cos(3*t)
--
-Math.cos(4*t)
+
+div.innerHTML=`
+
+<div class="popupHead">
+
+<div class="close"></div>
+
+</div>
+
+
+<div class="popupText">
+
+${
+texts[
+Math.floor(
+Math.random()*texts.length
 )
-*
-scale
+]
+}
+
+</div>
+
+`;
 
 
 
-};
+document.body.appendChild(div);
+
+
+
+popups.push(div);
+
+
+
+return div;
 
 
 }
 
 
-
-
-
-
-/* =========================
-       爱心生成
-========================= */
-
-
-async function createHeart(){
-
-
-let count =
-isMobile ? 65 : 110;
-
-
-
-let scale =
-Math.min(
-width,
-height
-)
-/38;
-
-
-
-for(let i=0;i<count;i++){
-
-
-    let t =
-    Math.PI*2*i/count;
-
-
-
-    let p =
-    heartPosition(
-        t,
-        scale
-    );
-
-
-
-    let startX =
-    Math.random()*width;
-
-
-    let startY =
-    Math.random()*height;
-
-
-
-
-    let popup =
-    createPopup(
-        startX,
-        startY
-    );
-
-
-
-    let targetX =
-    width/2+p.x-70;
-
-
-    let targetY =
-    height/2-p.y-35;
-
-
-
-
-    setTimeout(()=>{
-
-
-        popup.style.transition =
-        "all 1.5s cubic-bezier(.2,1.5,.3,1)";
-
-
-        popup.style.left =
-        targetX+"px";
-
-
-        popup.style.top =
-        targetY+"px";
-
-
-
-    },i*35);
-
-
-
-    await sleep(35);
-
-
-
-}
-
-
-
-document
-.querySelector(".heart-glow")
-.classList.add("active");
-
-}
 
 
 
@@ -1421,7 +1424,7 @@ document
 function sleep(ms){
 
 return new Promise(
-resolve=>setTimeout(resolve,ms)
+r=>setTimeout(r,ms)
 );
 
 }
@@ -1431,339 +1434,351 @@ resolve=>setTimeout(resolve,ms)
 
 
 
-/* =========================
-       主动画
-========================= */
+/* =====================
+        爱心坐标
+===================== */
 
 
-function render(){
+function heartPoints(){
+
+
+let arr=[];
+
+
+
+let count =
+mobile ? 75 : 150;
+
+
+
+let scale =
+Math.min(w,h)/40;
+
+
+
+for(let i=0;i<count;i++){
+
+
+let t=
+Math.PI*2*i/count;
+
+
+
+let x=
+16*
+Math.pow(
+Math.sin(t),
+3
+);
+
+
+
+let y=
+
+13*Math.cos(t)
+-
+5*Math.cos(2*t)
+-
+2*Math.cos(3*t)
+-
+Math.cos(4*t);
+
+
+
+arr.push({
+
+x:
+w/2+x*scale-70,
+
+
+y:
+h/2-y*scale-35
+
+
+});
+
+
+}
+
+
+return arr;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =====================
+        爱心出现
+===================== */
+
+
+async function createHeart(){
+
+
+let points=
+heartPoints();
+
+
+
+for(let i=0;i<points.length;i++){
+
+
+
+createPopup(
+
+points[i].x,
+
+points[i].y
+
+);
+
+
+
+await sleep(22);
+
+
+
+}
+
+
+
+document
+.querySelector(".heartGlow")
+.classList
+.add("active");
+
+
+
+await sleep(2500);
+
+
+
+removeHeart();
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+        爱心消失
+===================== */
+
+
+async function removeHeart(){
+
+
+
+for(
+let i=popups.length-1;
+i>=0;
+i--
+){
+
+
+let p=
+popups[i];
+
+
+
+p.style.transition=
+".35s";
+
+
+
+p.style.opacity="0";
+
+
+
+p.style.transform=
+
+"scale(.1) rotate(180deg)";
+
+
+
+await sleep(25);
+
+
+
+setTimeout(()=>{
+
+p.remove();
+
+},350);
+
+
+
+}
+
+
+
+popups=[];
+
+
+
+await sleep(800);
+
+
+
+fullScreen();
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+        全屏爆发
+===================== */
+
+
+async function fullScreen(){
+
+
+
+let count =
+mobile ? 150 : 320;
+
+
+
+for(let i=0;i<count;i++){
+
+
+
+let x=
+Math.random()*(w-140);
+
+
+
+let y=
+Math.random()*(h-70);
+
+
+
+createPopup(
+x,
+y
+);
+
+
+
+await sleep(12);
+
+
+
+}
+
+
+
+await sleep(2500);
+
+
+
+document
+.querySelector(".final")
+.classList
+.add("show");
+
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================
+        动画循环
+===================== */
+
+
+function animate(){
+
 
 
 ctx.clearRect(
 0,
 0,
-width,
-height
+w,
+h
 );
 
 
 
 drawGalaxy();
 
+
 drawStars();
 
-drawMeteors();
+
+drawMeteor();
 
 
 
 requestAnimationFrame(
-render
+animate
 );
 
 
-}
-
-
-
-render();
-/* =========================
-        第三阶段
-        爱心完成后的剧情
-========================= */
-
-
-async function startFinalAnimation(){
-
-
-
-    await sleep(5000);
-
-
-
-    // 爱心呼吸结束
-
-    document
-    .querySelector(".heart-glow")
-    .classList.remove("active");
-
-
-
-    // 开始消散
-
-    await dissolveHeart();
-
-
-
-    await sleep(1000);
-
-
-
-    // 全屏文字雨
-
-    await createSkyWindows();
-
-
-
-    await sleep(3000);
-
-
-
-    showFinalText();
-
-
 
 }
 
 
+animate();
 
 
 
-/* =========================
-        爱心消散
-========================= */
 
 
-async function dissolveHeart(){
 
 
-    let list =
-    [...popupList];
-
-
-
-    for(
-    let i=list.length-1;
-    i>=0;
-    i--
-    ){
-
-
-        let popup =
-        list[i];
-
-
-
-        popup.style.transition =
-        "all .5s ease";
-
-
-
-        popup.style.transform =
-        "scale(.1) rotate(180deg)";
-
-
-
-        popup.style.opacity =
-        "0";
-
-
-
-        setTimeout(()=>{
-
-
-            popup.remove();
-
-
-        },500);
-
-
-
-        await sleep(30);
-
-
-    }
-
-
-
-    popupList=[];
-
-
-
-}
-
-
-
-
-
-/* =========================
-       全屏窗口星雨
-========================= */
-
-
-async function createSkyWindows(){
-
-
-    let count =
-    isMobile ? 90 : 180;
-
-
-
-    for(let i=0;i<count;i++){
-
-
-
-        let x =
-        Math.random()
-        *
-        (width-140);
-
-
-
-        let y =
-        Math.random()
-        *
-        (height-70);
-
-
-
-        let popup =
-        createPopup(
-            x,
-            y
-        );
-
-
-
-        popup.style.opacity="0";
-
-
-
-        setTimeout(()=>{
-
-
-            popup.style.transition =
-            "opacity .8s, transform .8s";
-
-
-            popup.style.opacity="1";
-
-            popup.style.transform =
-            "scale(1)";
-
-
-        },50);
-
-
-
-        await sleep(40);
-
-
-    }
-
-
-
-}
-
-
-
-
-
-/* =========================
-       最终文字
-========================= */
-
-
-function showFinalText(){
-
-
-    let text =
-    document.querySelector(
-    ".final-text"
-    );
-
-
-
-    text.innerHTML=`
-
-    <div>
-
-    遇见你
-
-    <br>
-
-    是银河赠我的礼物
-
-    <br>
-
-    <span style="
-    font-size:.45em;
-    letter-spacing:5px;
-    ">
-
-    愿你永远被温柔以待
-
-    </span>
-
-    </div>
-
-    `;
-
-
-
-    text.classList.add(
-    "show"
-    );
-
-
-
-}
-
-
-
-
-
-
-/* =========================
-       自动开始最终阶段
-========================= */
-
-
-const oldCreateHeart =
-createHeart;
-
-
-
-createHeart = async function(){
-
-
-    await oldCreateHeart();
-
-
-
-    startFinalAnimation();
-
-
-};
-
-
-
-
-/* 开始 */
+/* =====================
+        开始
+===================== */
 
 
 document
-.querySelector(".start-screen")
-.onclick=()=>{
+.querySelector(".start")
+.onclick=function(){
 
 
-document
-.querySelector(".start-screen")
-.style.opacity=0;
+
+this.style.opacity=0;
 
 
 
 setTimeout(()=>{
 
 
-document
-.querySelector(".start-screen")
-.style.display="none";
+this.style.display="none";
 
 
 createHeart();
 
 
-},1200);
+
+},800);
 
 
 
